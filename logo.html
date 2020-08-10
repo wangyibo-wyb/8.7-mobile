@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>LOGO设计(仅供练习)</title>
+    <link rel="stylesheet" href="css/logo.css">
+    <style>
+        html {
+            font-size: 26.666667vw;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- banner栏开始 -->
+    <div class="banner">
+        <!-- 头部开始 -->
+        <div class="header">
+            <div class="header-row">
+                <div class="header-logo">
+                    <a href="" class="logo">
+                        <img src="imgs/logo1.png" alt="">
+                    </a>
+                    <span>上海嘉设计工作室</span>
+                </div>
+                <div class="menu">
+                    <div class="menu-btn">
+                        <img src="imgs/menu.png" alt="">
+                    </div>
+                </div>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="nav-list">
+                            <li style="border-bottom: 1px solid #046bf8;">
+                                <a href="logo.html">首页</a>
+                            </li>
+                            <li class="header-list-item2">
+                                <a href="">设计流程</a>
+                            </li>
+                            <li class="header-list-item2">
+                                <a href="">case</a>
+                            </li>
+                            <li class="header-list-item2">
+                                <a href="">工作室</a>
+                            </li>
+                            <li class="header-list-item2">
+                                <a href="">留言板</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script>
+            var header = document.querySelector(".header");
+            var menuBtn = document.querySelector(".menu-btn");
+            var headerNav = document.querySelector(".header-nav");
+            var flag = 0;
+            menuBtn.onclick = function(){
+                if(flag == 0){
+                    headerNav.style.display = "block";
+                    header.style.background = "#000"
+                    header.style.opacity = 0.8;
+                    flag = 1;
+                }else{
+                    headerNav.style.display = "none"
+                    header.style.background = "none"
+                    flag = 0;
+                }
+            }
+        </script>
+        <!-- 轮播图片开始 -->
+        <div class="back">
+            <span>
+                <</span>
+        </div>
+        <div class="banner-list">
+            <div class="banner-item"
+                style="opacity: 1;background: url(imgs/lg1.jpg);background-size: cover;background-position: center center;width: 100%;height: 100%;">
+                <div style="position: absolute;background: #000;width: 100%;height: 100%;opacity: .2;"></div>
+            </div>
+            <div class="banner-item"
+                style="opacity: 0;background: url(imgs/lg2.jpg);background-size: cover;background-position: center center;width: 100%;height: 100%;">
+                <div style="position: absolute;background: #000;width: 100%;height: 100%;opacity: .2;"></div>
+            </div>
+        </div>
+        <div class="next">
+            <span>></span>
+        </div>
+        <script src="animate.js"></script>
+        <script>
+            var list = document.querySelector(".banner-list")
+            var items = document.querySelectorAll(".banner-item");
+            var back = document.querySelector(".back");
+            var next = document.querySelector(".next");
+            var banner = document.querySelector(".banner");
+            var num = 0;
+            function wheel() {
+                num++;
+                if (num > items.length - 1) {
+                    num = 0;
+                }
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.opacity = 0;
+                }
+                animate(items[num], {
+                    opacity: 1
+                }, 300)
+            }
+            var t = setInterval(wheel, 7000);
+
+            back.onclick = function () {
+                num--;
+                if (num < 0) {
+                    num = 1;
+                }
+                animate(items[num], {
+                    opacity: 1
+                }, 300)
+            }
+            next.onclick = function () {
+                num++;
+                if (num > items.length - 1) {
+                    num = 0;
+                }
+                animate(items[num], {
+                    opacity: 1
+                }, 300)
+            }
+        </script>
+    </div>
+    <!-- 消息通知栏 -->
+    <div class="notice">
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" style="margin: 0 15px;">
+            专注、专心、专业提供视觉设计服务。设计=审美/商业=品牌，上海嘉设计工作室已为超过上百家商业体提供专业设计，最新推出普惠设计包 助力创业者</marquee>
+    </div>
+    <!-- 帮助栏开始 -->
+    <div class="help">
+        <div class="help-row">
+            <p>设计师品牌运营 去掉一切交接环节 直接需求方链接到设计师
+                <span>没有中间方信息差价 高效省心</span>
+            </p>
+            <div class="help-btn">
+                <a href="">了解我们</a>
+            </div>
+        </div>
+    </div>
+    <!-- 服务特色开始 -->
+    <div class="service">
+        <div class="service-con">
+            <div class="service-title">
+                <span>服务特色</span>
+            </div>
+            <div class="service-row">
+                <div class="service-icon">
+                    <img src="imgs/ss1.png" alt="" style="margin-left:11px;">
+                </div>
+                <div class="service-info">
+                    <span>空间艺术模型</span>
+                    <p>定制化商场3D模型设计，商场业态分区图、艺术模型制作、情景道具建模</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-icon">
+                    <img src="imgs/ss2.png" alt="">
+                </div>
+                <div class="service-info">
+                    <span>门店广告定制</span>
+                    <p>链接10多年安装方，只为把实用的想法通过设计的表达 清晰呈现</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-icon">
+                    <img src="imgs/ss3.png" alt="" style="margin-left:11px;">
+                </div>
+                <div class="service-info">
+                    <span>线上品牌设计</span>
+                    <p>营造品牌全栈形象，为品牌在互联网的世界里全面立体的呈现给所有消费者</p>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-icon">
+                    <img src="imgs/ss4.png" alt="">
+                </div>
+                <div class="service-info">
+                    <span>抖音淘宝电商</span>
+                    <p>卖货中与消费者直面的一环 产品美化设计，关乎下单率、转化率</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户留言开始 -->
+    <div class="customer">
+        <div class="customer-con">
+            <div class="customer-title">
+                <span>客户留言</span>
+            </div>
+            <div class="customer-lists">
+                <div class="customer-list">
+                    <div class="customer-list-con">
+                        <blockquote>
+                            <p>设计师质量很高，他们很好的解决了我的问题。</p>
+                        </blockquote>
+                        <div class="author">
+                            <p>
+                                <strong>周去静</strong>
+                                <span>经理 - 金色黄河彩钢配件钻尾螺丝</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="customer-list-con">
+                        <blockquote>
+                            <p>特别专业的能力，免去我们的困惑。
+                            </p>
+                        </blockquote>
+                        <div class="author">
+                            <p>
+                                <strong>Suring</strong>
+                                <span>CEO & Founder - 居之美窗帘</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="customer-list-con">
+                        <blockquote>
+                            <p>这么负责的公司，一定会越做越好</p>
+                        </blockquote>
+                        <div class="author">
+                            <p>
+                                <strong>赵磊</strong>
+                                <span>副总经理 - 安徽易迅企业有限公司</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customer-items">
+                <div class="customer-item" style="background-color: #046bf8"></div>
+                <div class="customer-item"></div>
+                <div class="customer-item"></div>
+            </div>
+            <script>
+                var cusLists = document.querySelector(".customer-list");
+                var cusItem = document.querySelectorAll(".customer-item");
+                var n = 0;
+                for (let i = 0; i < cusItem.length; i++) {
+                    n++;
+                    cusItem[i].onclick = function () {
+                        n = i;
+                        animate(cusLists, {
+                            "margin-left": -n * 315
+                        }, 500)
+                        for (var j = 0; j < cusItem.length; j++) {
+                            cusItem[j].style.background = "#d6d6d6";
+                        }
+                        cusItem[i].style.background = "#046bf8";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    <!-- 主要日期开始 -->
+    <div class="primary">
+        <div class="primary-con">
+            <div class="primary-row">
+                <div class="primary-title">
+                    <span>资讯</span>
+                </div>
+                <div class="primary-row1">
+                    <div class="primary-item" style="margin-top: 25px">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">15</span>
+                                <span class="month">二月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">地摊经济起飞姿势之摊位广告牌设计-来自挖地脑壳的洗报</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-item">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">04</span>
+                                <span class="month">六月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">设计工作造就71岁设计师身材如少女</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-item">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">26</span>
+                                <span class="month">五月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">我们所看到的LOGO | 2019 年 LOGO 设计趋势报告（上）</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-item">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">13</span>
+                                <span class="month">十月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">2020的短视频要走向何方？</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-more">
+                        <a href="">更多</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="primary-row">
+                <div class="primary-title">
+                    <span>问答</span>
+                </div>
+                <div class="primary-row1">
+                    <div class="primary-item" style="margin-top: 25px">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">05</span>
+                                <span class="month">三月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">什么是设计？设计的本质是什么？</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-more">
+                        <a href="">更多</a>
+                    </div>
+                </div>
+            </div>
+            <div class="primary-row">
+                <div class="primary-title">
+                    <span>经验</span>
+                </div>
+                <div class="primary-row1">
+                    <div class="primary-item" style="margin-top: 25px">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">15</span>
+                                <span class="month">三月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">商场业态分区图or三维业态模型设计</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-item">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">30</span>
+                                <span class="month">五月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">如何快速提高新品牌知名度</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-item">
+                        <article class="primary-post">
+                            <div class="primary-date">
+                                <span class="day">09</span>
+                                <span class="month">十二月</span>
+                            </div>
+                            <div class="primary-text">
+                                <a href="">门头广告设计的注意项</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="primary-more">
+                        <a href="">更多</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 分享内容开始 -->
+    <div class="container">
+        <div class="container-con">
+            <div class="container-items">
+                <div class="container-title">
+                    <span>case</span>
+                </div>
+                <div class="container-row">
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/q1.png" alt="">
+                        </a>
+                        <span>阿里云深圳释放技术红利 支持企业数字化发展</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/met.png" alt="">
+                        </a>
+                        <span>metinfo米拓建站系统</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/q2.png" alt="">
+                        </a>
+                        <span>下一代建站：AI智能建站</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-items">
+                <div class="container-title">
+                    <span>分享</span>
+                </div>
+                <div class="container-row">
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/z1.png" alt="">
+                        </a>
+                        <span>什么是网站账号</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/z2.png" alt="">
+                        </a>
+                        <span>什么是banner</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/q3.png" alt="">
+                        </a>
+                        <span>什么是网站logo</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/z4.png" alt="">
+                        </a>
+                        <span>什么是网站SEO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-items">
+                <div class="container-title">
+                    <span>知识</span>
+                </div>
+                <div class="container-row">
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/q1.png" alt="">
+                        </a>
+                        <span>如何给企业门户网网站申请企业备案</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/j2.png" alt="">
+                        </a>
+                        <span>如何定制网站模板</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/j3.png" alt="">
+                        </a>
+                        <span>秀米：一款支持图文排版和H5秀的工具</span>
+                    </div>
+                    <div class="container-item">
+                        <a href="">
+                            <img src="imgs/q1.png" alt="">
+                        </a>
+                        <span>如何快速生成图文并茂的文章</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="footer-con">
+            <div class="footer-ribbon">
+                <span>联系我们</span>
+            </div>
+            <div class="footer-row">
+                <div class="footer-title">留言</div>
+                <p>直接在输入框内输入您留言的内容，点击发送留言按钮，即可给我们留言</p>
+                <form action="">
+                    <div class="footer-input">
+                        <input type="text" placeholder="输入留言内容" style="position: relative;float: left;width: 100%;
+                        height:29px">
+                        <span class="footer-btn">
+                            <button>发送留言</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="footer-row2">
+                <div class="footer-title">联系我们</div>
+                <ul class="footer-row2-list">
+                    <li>
+                        <div class="footer-row2-item">
+                            <img src="imgs/phone.png" alt="" style="width: 12px;height: 15px;margin: 7px 8px 10px 0;float: left;">
+                            <span style="display: block;margin-top: 2px;float: left;">电话号码：+86 130 7211 5075</span>
+                        </div>    
+                    </li>
+                    <li>
+                        <div class="footer-row2-item">
+                            <img src="imgs/email.png" alt="" style="width: 12px;height: 13px;margin: 7px 8px 10px 0;float: left;">
+                            <span style="display: block;margin-top: 2px;float: left;">Email：</span>
+                            <a href="" style="color: #fff;float: left;padding: 0;margin: 0;">youjia0626@163.com</a>
+                        </div>   
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-row3">
+                <div class="footer-title">社交账号</div>
+                <ul class="footer-row3-con">
+                    <li style="width: 30px;height: 30px;border-radius: 50%;background-color: #fff;float: left;position: relative;top:114px">
+                        <a href="" style="width: 13px;height: 13px;">
+                            <img src="imgs/qq.png" alt="" style="margin:8px 8px;">
+                        </a>
+                    </li>
+                    <li style="width: 30px;height: 30px;border-radius: 50%;background-color: #fff;float: left;position: relative;top:114px;margin:0 5px">
+                        <a href="" style="width: 13px;height: 13px;">
+                            <img src="imgs/wx.png" alt="" style="margin:8px 8px;">
+                        </a></li>
+                    <li style="width: 200px;height: 224px;margin-left: 70px;">
+                        手机扫码二维码或长按识别加好友
+                        <img src="imgs/erweima1.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-end">
+            <div class="end-con">
+                <div class="end-row3">
+                    <div class="end-row3-left">
+                        <span>Copyright @ 2015-2020 上海嘉设计 版权所有 | 由</span>
+                        <a href="">企业门户网</a>
+                        <span>提供技术支持</span>
+                        <a href="login.html">登录管理后台</a>
+                    </div>
+                    <div class="end-row3-right">
+                        <span>由</span>
+                        <a href="">阿里云</a>
+                        <span>提供可靠云服务 | 由</span>
+                        <a href="">又拍云</a>
+                        <span>提供CDN和图片存储计算服务</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 回到顶部开始 -->
+    <div href="" class="top">
+        <img src="imgs/top.png" alt="">
+    </div>
+    <script src="animate.js"></script>
+    <script>
+        var header = document.querySelector(".header");
+        var toTop = document.querySelector(".top");
+        var row = document.querySelector(".service-row");
+        var row1 = document.querySelector(".service-row1");
+        var row2 = document.querySelector(".service-row2");
+        var row3 = document.querySelector(".service-row3");
+        window.onscroll = function () {
+            var st = document.documentElement.scrollTop;
+            if(st>5){
+                header.style.background = "#000";
+                header.style.opacity = 0.8;
+            }else{
+                header.style.background = "none";
+                header.style.opacity = 1;
+            }
+            if(st>241){
+                toTop.style.display = "block";
+            }else{
+                toTop.style.display = "none";
+            }
+        }
+        toTop.onclick = function () {
+            animate(document.documentElement, {
+                scrollTop: 0
+            }, 500)
+        }
+    </script>
+</body>
+
+</html>
