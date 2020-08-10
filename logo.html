@@ -80,6 +80,22 @@
             <div class="banner-item"
                 style="opacity: 1;background: url(imgs/lg1.jpg);background-size: cover;background-position: center center;width: 100%;height: 100%;">
                 <div style="position: absolute;background: #000;width: 100%;height: 100%;opacity: .2;"></div>
+                <div class="item-text0">
+                    <div class="item-text01">
+                        <img src="imgs/border1.png" alt="" class="text01-img1">
+                        <div class="item-text02">快速高效完成设计内容？</div>
+                        <img src="imgs/border1.png" alt="" style="margin-left: 10px;float: left;margin-top: 3px;" class="text01-img2">
+                    </div>
+                    <div class="item-text03">
+                        <div class="item-text04">嘉设计工作室</div>
+                    </div>
+                    <div class="item-text05">
+                        <div class="item-text06">设计师联盟 立足市场高质低价的先驱模式</div>
+                    </div>
+                    <div class="item-text07">
+                        <a href="" class="register-btn">设计流程</a>
+                    </div>
+                </div>
             </div>
             <div class="banner-item"
                 style="opacity: 0;background: url(imgs/lg2.jpg);background-size: cover;background-position: center center;width: 100%;height: 100%;">
@@ -129,6 +145,29 @@
                     opacity: 1
                 }, 300)
             }
+            var text02 = document.querySelector(".item-text02");
+            text02.style.opacity = 1;
+            text02.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
+
+            var img1 = document.querySelector(".text01-img1");
+            img1.style.opacity = 1;
+            img1.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
+
+            var img2 = document.querySelector(".text01-img2");
+            img2.style.opacity = 1;
+            img2.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
+
+            var text04 = document.querySelector(".item-text04");
+            text04.style.opacity = 1;
+            text04.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
+
+            var text06 = document.querySelector(".item-text06");
+            text06.style.opacity = 1;
+            text06.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
+
+            var regbtn = document.querySelector(".register-btn");
+            regbtn.style.opacity = 1;
+            regbtn.style.transform = "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)";
         </script>
     </div>
     <!-- 消息通知栏 -->
@@ -153,7 +192,7 @@
             <div class="service-title">
                 <span>服务特色</span>
             </div>
-            <div class="service-row">
+            <div class="service-row" style="padding-top: 25px">
                 <div class="service-icon">
                     <img src="imgs/ss1.png" alt="" style="margin-left:11px;">
                 </div>
@@ -162,7 +201,7 @@
                     <p>定制化商场3D模型设计，商场业态分区图、艺术模型制作、情景道具建模</p>
                 </div>
             </div>
-            <div class="service-row">
+            <div class="service-row1">
                 <div class="service-icon">
                     <img src="imgs/ss2.png" alt="">
                 </div>
@@ -171,7 +210,7 @@
                     <p>链接10多年安装方，只为把实用的想法通过设计的表达 清晰呈现</p>
                 </div>
             </div>
-            <div class="service-row">
+            <div class="service-row2">
                 <div class="service-icon">
                     <img src="imgs/ss3.png" alt="" style="margin-left:11px;">
                 </div>
@@ -180,7 +219,7 @@
                     <p>营造品牌全栈形象，为品牌在互联网的世界里全面立体的呈现给所有消费者</p>
                 </div>
             </div>
-            <div class="service-row">
+            <div class="service-row3">
                 <div class="service-icon">
                     <img src="imgs/ss4.png" alt="">
                 </div>
@@ -578,6 +617,18 @@
                 toTop.style.display = "block";
             }else{
                 toTop.style.display = "none";
+            }
+            if (st > 100) {
+                row.style.opacity = 1;
+                row.style.marginLeft = 0;
+                row1.style.opacity = 1;
+                row1.style.marginLeft = 0;
+            }
+            if (st > 300) {
+                row2.style.opacity = 1;
+                row2.style.marginLeft = 0;
+                row3.style.opacity = 1;
+                row3.style.marginLeft = 0;
             }
         }
         toTop.onclick = function () {

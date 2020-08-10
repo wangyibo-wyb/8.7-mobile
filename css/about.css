@@ -57,7 +57,7 @@ a{
 }
 .header-logo span{
     color: #FFF;
-    line-height: 40px;
+    line-height: 0.4rem;
 }
 .menu-btn{
     background: #5974a3;
@@ -81,15 +81,15 @@ a{
     overflow-y: auto;
     float: left;
     border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.1rem;
+    margin-bottom: 0.1rem;
     background: #FFF;
     box-sizing: border-box;
     display: none;
 }
 .nav-list li{
     border-bottom: 1px solid #e8e8e8;
-    line-height: 24px;
+    line-height: 0.24rem;
 }
 .nav-list a{
     font-weight: 700;
